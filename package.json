@@ -6,7 +6,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint \"src/**/*.js\"",
+    "lint:fix": "eslint \"src/**/*.js\" --fix --color",
+    "prettier": "prettier",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
@@ -15,16 +19,16 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
+    "styled-components": "^5.3.3",
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "styled-components": "^5.3.3"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "eslint": "^8.9.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.3",
+    "prettier": "^2.5.1"
   },
   "browserslist": {
     "production": [
@@ -37,5 +41,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "lint-staged": {
+    "*.js": "eslint --fix --color",
+    "*": "prettier --ignore-unknown --write"
   }
 }
