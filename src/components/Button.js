@@ -1,4 +1,5 @@
-import styled, { css, keyframes } from "styled-components";
+/* eslint-disable no-shadow */
+import styled, { css, keyframes } from 'styled-components';
 
 const rotateAnimation = keyframes`
   0% {
@@ -9,6 +10,7 @@ const rotateAnimation = keyframes`
   }
 `;
 
+// eslint-disable-next-line no-unused-vars
 const StyledButton = styled.button.attrs((props) => ({
   outlined: true,
 }))`
@@ -22,13 +24,13 @@ const StyledButton = styled.button.attrs((props) => ({
   &:hover {
     animation: ${rotateAnimation} 1s infinite linear;
   }
-  align-self: ${(props) => props.align || "stretch"};
+  align-self: ${(props) => props.align || 'stretch'};
 
   ${(props) =>
     props.primary &&
     css`
       color: ${(props) => props.color || props.theme.colors.primary};
-      background: ${(props) => props.background || "white"};
+      background: ${(props) => props.background || 'white'};
     `}
 
   ${(props) =>
@@ -44,8 +46,8 @@ const LargeButton = styled(StyledButton)`
   font-size: 32px;
 `;
 
-const Button = (props) => {
+function Button(props) {
   return <LargeButton {...props} />;
-};
+}
 
 export default Button;
